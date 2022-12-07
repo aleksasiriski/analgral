@@ -1,8 +1,8 @@
-type Pair<a> = [a,a];
-type Pairs<a> = Pair<a>[];
+type Pair<a> = [a,a]
+type Pairs<a> = Pair<a>[]
 
 function randomNumber(min: number, max: number) {
-    return Math.random() * (max - min) + min;
+    return Math.random() * (max - min) + min
 }
 
 function parseFunction(x: number, functionString: string) {
