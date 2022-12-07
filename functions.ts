@@ -11,19 +11,22 @@ function parseFunction(x: number, functionString: string) {
     return eval(parsedFunction)
 }
 
-function riemannSum(subintervals: Pairs<number>, functionString: string) {
+function partitionInterval(n: number, interval: Pair<number>, functionString: string) {
+    let nextInterval: Pair<number> = interval
+    let subIntervals: Pairs<number> = []
+    for (let i: number = 0; i < n; i++) {
+        let newIntervalLimit: number = randomNumber(nextInterval[0], nextInterval[1])
+        subIntervals.push([nextInterval[0], newIntervalLimit])
+        nextInterval = [newIntervalLimit, nextInterval[1]]
+    }
+    return subIntervals
+}
+
+function riemannSum(subIntervals: Pairs<number>, functionString: string) {
     let sum: number = 0
-    subintervals.forEach((subinterval) => {
-        let min: number, max: number
-        if (subinterval[0] < subinterval[1]) {
-            min = subinterval[0]
-            max = subinterval[1]
-        } else {
-            max = subinterval[0]
-            min = subinterval[1]
-        }
-        let c: number = randomNumber(min, max)
-        sum += parseFunction(c, functionString) * (max - min)
+    subIntervals.forEach((subInterval) => {
+        let c: number = randomNumber(subInterval[0], subInterval[1])
+        sum += parseFunction(c, functionString) * (subInterval[1] - subInterval[0])
     })
     return sum
 }
