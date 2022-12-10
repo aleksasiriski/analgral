@@ -13,7 +13,7 @@ It also generates how the function F(x) looks and how randomly the subintervals 
 
 ### Matija Kljajic 137/22
 * GUI
-* Graph which shows the input function and N subintervals with random sizes within the [A, B] range, its labels and the key for easier understanding of the chart which was done with the Plotly library
+* Graphs with Plotly library
 * Comparison of results
 
 ### Misa Stefanovic
