@@ -11,7 +11,7 @@ function parseFunction(x: number, functionString: string) {
     return eval(parsedFunction)
 }
 
-function partitionInterval(n: number, interval: Pair<number>, functionString: string) {
+function partitionInterval(n: number, interval: Pair<number>) {
     let nextInterval: Pair<number> = interval
     let subIntervals: Pairs<number> = []
     for (let i: number = 0; i < n; i++) {
@@ -32,14 +32,6 @@ function choosePoints(subIntervals: Pairs<number>) {
     return points
 }
 
-function riemannSum(points: Pairs<number>, functionString: string) {
-    let sum: number = 0
-    points.forEach((point) => {
-        sum += parseFunction(point[0], functionString) * point[1]
-    })
-    return sum
-}
-
 function combineIntervalsAndPoints(points: Pairs<number>, subIntervals: Pairs<number>) {
     let combined: number[] = []
     points.forEach((point) => {
@@ -49,8 +41,26 @@ function combineIntervalsAndPoints(points: Pairs<number>, subIntervals: Pairs<nu
         combined.push(subInterval[0])
         combined.push(subInterval[1])
     })
-    var unique = combined.filter(function(elem, index, self) {
+    let unique = combined.filter(function(elem, index, self) {
         return index === self.indexOf(elem);
     })
     return unique
+}
+
+function calculateRiemannSum(points: Pairs<number>, functionString: string) {
+    let sum: number = 0
+    points.forEach((point) => {
+        sum += parseFunction(point[0], functionString) * point[1]
+    })
+    return sum
+}
+
+function calculate(N: number, A: number, B: number, F: string) {
+    const subIntervals: Pairs<number> = partitionInterval(N, [A, B])
+    const points: Pairs<number> = choosePoints(subIntervals)
+    const combined: number[] = combineIntervalsAndPoints(points, subIntervals)
+
+    const riemannSum: number = calculateRiemannSum(points, F)
+    //const integral: number = calculateDefiniteIntegral([A, B], F)
+    //const delta: number = Math.abs(riemannSum - integral)
 }
