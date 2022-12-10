@@ -16,4 +16,4 @@ It also generates how the function F(x) looks and how randomly the subintervals 
 * Graphs with Plotly library
 * Comparison of results
 
-### Misa Stefanovic
+### Misa Stefanovic 209/22
