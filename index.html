@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>math.js | plot</title>
+  <script src="https://unpkg.com/mathjs@11.5.0/lib/browser/math.js"></script>
+
+  <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+  <style>
+    input[type=text] {
+      width: 300px;
+    }
+    input {
+      padding: 6px;
+    }
+    body, html, input {
+      font-family: sans-serif;
+      font-size: 11pt;
+    }
+    form {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<form id="form">
+  <label for="eq">Enter an equation:</label>
+  <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
+  <input type="text" id="N" value="10" />
+  <input type="text" id="A" value="2" />
+  <input type="text" id="B" value="10" />
+  <input type="submit" value="Draw" />
+</form>
+
+<div id="plot"></div>
+
+<script type="module" src="./functions.ts"></script>
+<script type="module">
+  import calculate from './functions'
+
+  function draw() {
+    try {
+      // compile the expression once
+      const expression = document.getElementById('eq').value
+      const N = document.getElementById('N').value
+      const A = document.getElementById('A').value
+      const B = document.getElementById('B').value
+      const expr = math.compile(expression)
+
+      // evaluate the expression repeatedly for different values of x
+      const xValues = math.range(A-2, B+2, 0.5).toArray()
+      const yValues = xValues.map(function (x) {
+        return expr.evaluate({x: x})
+      })
+
+      const xValuesIntervals = calculate(N, A, B, expression)
+      //const xValuesIntervals = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
+      const yValuesIntervals = xValuesIntervals.map(function (x) {
+        return 0
+      })
+
+      //const xValuesPoints = calculate(N, A, B, expression)
+      const xValuesPoints = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
+      const yValuesPoints = xValuesPoints.map(function (x) {
+        return 0
+      })
+
+      // render the plot using plotly
+      const trace = {
+        x: xValues,
+        y: yValues,
+        fill: 'tonexty',
+        type: 'scatter'
+      }
+      const traceIntervals = {
+        x: xValuesIntervals,
+        y: yValuesIntervals,
+        type: 'scatter'
+      }
+      const tracePoints = {
+        x: xValuesPoints,
+        y: yValuesPoints,
+        type: 'scatter'
+      }
+      const data = [trace, traceIntervals, tracePoints]
+      Plotly.newPlot('plot', data)
+    }
+    catch (err) {
+      console.error(err)
+      alert(err)
+    }
+  }
+
+  document.getElementById('form').onsubmit = function (event) {
+    event.preventDefault()
+    draw()
+  }
+
+  draw()
+</script>
+
+</body>
+</html>

@@ -76,7 +76,7 @@ function calculateDefiniteIntegral(N: number, [A, B]: Pair<number>, functionStri
     return (s * h) / 3
 }
 
-function calculate(N: number, A: number, B: number, F: string) {
+export default function calculate(N: number, A: number, B: number, F: string) {
     const subIntervals: Pairs<number> = partitionInterval(N, [A, B])
     const points: Pairs<number> = choosePoints(subIntervals)
 
@@ -86,4 +86,6 @@ function calculate(N: number, A: number, B: number, F: string) {
     const riemannSum: number = calculateRiemannSum(points, F)
     const integral: number = calculateDefiniteIntegral(N, [A, B], F)
     const delta: number = Math.abs(riemannSum - integral)
+
+    return 0
 }
