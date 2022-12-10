@@ -32,14 +32,22 @@ function choosePoints(subIntervals: Pairs<number>) {
     return points
 }
 
-function combineIntervalsAndPoints(points: Pairs<number>, subIntervals: Pairs<number>) {
+function generateIntervalsArray(subIntervals: Pairs<number>) {
     let combined: number[] = []
-    points.forEach((point) => {
-        combined.push(point[0])
-    })
     subIntervals.forEach((subInterval) => {
         combined.push(subInterval[0])
         combined.push(subInterval[1])
+    })
+    let unique = combined.filter(function(elem, index, self) {
+        return index === self.indexOf(elem);
+    })
+    return unique
+}
+
+function generatePointsArray(points: Pairs<number>) {
+    let combined: number[] = []
+    points.forEach((point) => {
+        combined.push(point[0])
     })
     let unique = combined.filter(function(elem, index, self) {
         return index === self.indexOf(elem);
@@ -71,7 +79,9 @@ function calculateDefiniteIntegral(N: number, [A, B]: Pair<number>, functionStri
 function calculate(N: number, A: number, B: number, F: string) {
     const subIntervals: Pairs<number> = partitionInterval(N, [A, B])
     const points: Pairs<number> = choosePoints(subIntervals)
-    const combined: number[] = combineIntervalsAndPoints(points, subIntervals)
+
+    const intervalsArray: number[] = generateIntervalsArray(subIntervals)
+    const pointsArray: number[] = generatePointsArray(points)
 
     const riemannSum: number = calculateRiemannSum(points, F)
     const integral: number = calculateDefiniteIntegral(N, [A, B], F)
