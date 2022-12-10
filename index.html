@@ -6,10 +6,7 @@
   <script src="https://unpkg.com/mathjs@11.5.0/lib/browser/math.js"></script>
 
   <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
   <style>
     input[type=text] {
       width: 300px;
@@ -20,77 +17,35 @@
     body, html, input {
       font-family: sans-serif;
       font-size: 11pt;
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     }
     form {
       margin: 20px 0;
     }
-<<<<<<< Updated upstream
-=======
     footer {
         bottom: 0;
         position: fixed;
     }
->>>>>>> Stashed changes
   </style>
 </head>
 <body>
 
 <form id="form">
-<<<<<<< Updated upstream
-  <label for="eq">Enter an equation:</label>
-  <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
-  <input type="text" id="N" value="10" />
-  <input type="text" id="A" value="2" />
-  <input type="text" id="B" value="10" />
-  <input type="submit" value="Draw" />
-=======
   <label for="eq">Upiši funkciju:</label>
   <input type="text" id="eq" placeholder="f(x)"/>
   <input type="text" id="n" placeholder="Broj nasumičnih brojeva"/>
   <input type="text" id="a" placeholder="Početna vrednost intervala"/>
   <input type="text" id="b" placeholder="Krajnja vrednost intervala"/>
   <input type="submit" value="Analiziraj"/>
->>>>>>> Stashed changes
 </form>
 
 <div id="plot"></div>
 
-<<<<<<< Updated upstream
-<script type="text/typescript" src="./functions.ts"></script>
-<script type="text/javascript">
-=======
 <script>
->>>>>>> Stashed changes
   function draw() {
     try {
       // compile the expression once
       const expression = document.getElementById('eq').value
-<<<<<<< Updated upstream
-      const N = document.getElementById('N').value
-      const A = document.getElementById('A').value
-      const B = document.getElementById('B').value
-      const expr = math.compile(expression)
-
-      // evaluate the expression repeatedly for different values of x
-      const xValues = math.range(A-2, B+2, 0.5).toArray()
-      const yValues = xValues.map(function (x) {
-        return expr.evaluate({x: x})
-      })
-
-      //const xValuesIntervals = calculate(N, A, B, expression)
-      const xValuesIntervals = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
-      const yValuesIntervals = xValuesIntervals.map(function (x) {
-        return 0
-      })
-
-      //const xValuesPoints = calculate(N, A, B, expression)
-      const xValuesPoints = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
-      const yValuesPoints = xValuesPoints.map(function (x) {
-=======
       const expr = math.compile(expression)
 
       // evaluate the expression repeatedly for different values of x
@@ -104,30 +59,10 @@
       })
       const xValues3 = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
       const yValues3 = xValues2.map(function (x) {
->>>>>>> Stashed changes
         return 0
       })
 
       // render the plot using plotly
-<<<<<<< Updated upstream
-      const trace = {
-        x: xValues,
-        y: yValues,
-        fill: 'tonexty',
-        type: 'scatter'
-      }
-      const traceIntervals = {
-        x: xValuesIntervals,
-        y: yValuesIntervals,
-        type: 'scatter'
-      }
-      const tracePoints = {
-        x: xValuesPoints,
-        y: yValuesPoints,
-        type: 'scatter'
-      }
-      const data = [trace, traceIntervals, tracePoints]
-=======
       const trace1 = {
         x: xValues1,
         y: yValues1,
@@ -165,7 +100,6 @@
         name: 'Nasumični brojevi'
       }
       const data = [trace1, trace2, trace3]
->>>>>>> Stashed changes
       Plotly.newPlot('plot', data)
     }
     catch (err) {
@@ -183,10 +117,7 @@
 </script>
 
 </body>
-<<<<<<< Updated upstream
-=======
 <footer>
     <p>Aleksa Siriški (159/22), Miša Stefanović (), Matija Kljajić (137/22)</p>
 </footer>
->>>>>>> Stashed changes
 </html>
