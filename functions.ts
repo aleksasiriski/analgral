@@ -40,7 +40,7 @@ function generateIntervalsArray(subIntervals: Pairs<number>) {
     })
     let unique = combined.filter(function(elem, index, self) {
         return index === self.indexOf(elem);
-    })
+    }).sort()
     return unique
 }
 
@@ -51,7 +51,7 @@ function generatePointsArray(points: Pairs<number>) {
     })
     let unique = combined.filter(function(elem, index, self) {
         return index === self.indexOf(elem);
-    })
+    }).sort()
     return unique
 }
 
