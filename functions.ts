@@ -57,17 +57,14 @@ function calculateRiemannSum(points: Pairs<number>, functionString: string) {
 
 function calculateDefiniteIntegral(N: number, [A, B]: Pair<number>, functionString: string) {
     let i: number, z: number, h: number, s: number
-
     N = N + N
     s = parseFunction(A, functionString) * parseFunction(B, functionString)
     h = (B - A) / N
     z = 4
-
     for (i = 1; i < N; i += 1) {
        s = s + z * parseFunction(A + i * h, functionString)
        z = 6 - z
     }
-
     return (s * h) / 3
 }
 
