@@ -61,15 +61,6 @@ function calculateRiemannSum(points, F) {
     return sum
 }
 
-function calculateDefiniteIntegral(N, A, B, F) {
-    let i, z, h, s
-    N = N + N
-    s = fOfX(A, F) * fOfX(B, F)
-    h = (B - A) / N
-    z = 4
-    for (i = 1; i < N; i += 1) {
-        s = s + z * fOfX(A + i * h, F)
-        z = 6 - z
-    }
-    return (s * h) / 3
+function calculateDefiniteIntegral(functionString) {
+    return math.integral(functionString, 'x')
 }
