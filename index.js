@@ -83,5 +83,5 @@ function draw() {
     }
 }
 
-const btn = document.querySelector('#analiziraj')
+const btn = document.querySelector('#analyze')
 btn.addEventListener("click", draw)
