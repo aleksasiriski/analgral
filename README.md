@@ -7,7 +7,7 @@ It also generates how the function F(x) looks and how randomly the subintervals 
 ## Deployment
 Check out this project [here](https://analgral.tmina.org)
 
-## Contributors:
+## Contributors
 
 ### Aleksa Siriški 159/22
 * Organization
