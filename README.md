@@ -7,14 +7,14 @@ It also generates how the function F(x) looks and how randomly the subintervals 
 ## Deployment
 Check out this project [here](https://analgral.tmina.org)
 
-## Who did what:
+## Contributors:
 
-### Aleksa Siriski 159/22
+### Aleksa Siriški 159/22
 * Organization
 * Deployment on Cloudflare Pages
 * Functions
 
-### Matija Kljajic 137/22
+### Matija Kljajić 137/22
 * GUI
 * Graphs with Plotly library
 * Comparison of results
