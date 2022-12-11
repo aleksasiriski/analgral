@@ -34,8 +34,9 @@
 <body>
 
   <form>
-    <label for="F">Unesite funkciju:</label>
-    <input type="text" id="F" placeholder="x ^ 2 + 3x + sqrt(5)" />
+    <label>Unesite funkciju:</label>
+    <input type="text" id="F" placeholder="x ^ 2" />
+    <input type="text" id="Fintegral" placeholder="x ^ 3 / 3" />
     <input type="text" id="N" placeholder="Broj podintervala" />
     <input type="text" id="A" placeholder="Donja granica integrala" />
     <input type="text" id="B" placeholder="Gornja granica integrala" />
@@ -45,9 +46,9 @@
   <div id="plot"></div>
 
   <p class="wrap">
-  <div id="r"></div>
-  <div id="i"> </div>
-  <div id="d"></div>
+  <div id="riemann"></div>
+  <div id="integral"> </div>
+  <div id="delta"></div>
   </p>
 
   <span style="position: absolute; bottom: 1%; right: 1%;">

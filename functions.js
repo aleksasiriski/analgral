@@ -61,6 +61,6 @@ function calculateRiemannSum(points, F) {
     return sum
 }
 
-function calculateDefiniteIntegral(functionString) {
-    return math.integral(functionString, 'x')
+function calculateDefiniteIntegral(A, B, Fdx) {
+    return Fdx.evaluate({ x: B }) - Fdx.evaluate({ x: A })
 }

@@ -4,9 +4,11 @@ function draw() {
         const A = parseInt(document.getElementById('A').value)
         const B = parseInt(document.getElementById('B').value)
         const functionString = document.getElementById('F').value
+        const functionIntegralString = document.getElementById('Fintegral').value
 
         // compile the expression once
         const F = math.compile(functionString)
+        const Fdx = math.compile(functionIntegralString)
 
         // evaluate the expression repeatedly for different values of x
         const xValues = math.range(A, B + 0.5, 0.5).toArray()
@@ -67,12 +69,12 @@ function draw() {
         Plotly.newPlot('plot', data)
 
         let riemannSum = calculateRiemannSum(points, F)
-        let integral = calculateDefiniteIntegral(N, A, B, F)
+        let integral = calculateDefiniteIntegral(A, B, Fdx)
         let delta = Math.abs(riemannSum - integral)
 
-        document.getElementById("r").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
-        document.getElementById("i").innerHTML = "Integral funkcije: " + integral;
-        document.getElementById("d").innerHTML = "Apsolutna greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
+        document.getElementById("riemann").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
+        document.getElementById("integral").innerHTML = "Integral funkcije: " + integral;
+        document.getElementById("delta").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
 
     }
     catch (err) {
