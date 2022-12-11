@@ -1,5 +1,5 @@
-function randomNumber(min, max) {
-    return Math.random() * (max - min) + min
+function randomNumber(A, B) {
+    return Math.random() * (B - A) + A
 }
 
 function fOfX(x, F) {
@@ -7,13 +7,14 @@ function fOfX(x, F) {
 }
 
 function partitionInterval(N, A, B) {
-    let nextInterval = [A, B]
+    let nextInterval = A
     let subIntervals = []
-    for (let i = 0; i < N; i++) {
-        let newIntervalLimit = randomNumber(nextInterval[0], nextInterval[1])
-        subIntervals.push([nextInterval[0], newIntervalLimit])
-        nextInterval = [newIntervalLimit, nextInterval[1]]
+    for (let i = 0; i < N - 1; i++) {
+        var newIntervalLimit = randomNumber(nextInterval, B)
+        subIntervals.push([nextInterval, newIntervalLimit])
+        nextInterval = newIntervalLimit
     }
+    subIntervals.push([newIntervalLimit, B])
     return subIntervals
 }
 
