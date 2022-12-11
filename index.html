@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>math.js | plot</title>
+  <title>Analgral</title>
   <script src="https://unpkg.com/mathjs@11.5.0/lib/browser/math.js"></script>
-
   <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
-
   <style>
     input[type=text] {
       width: 300px;
@@ -31,90 +29,18 @@
 <body>
 
 <form id="form">
-  <label for="eq">Upiši funkciju:</label>
-  <input type="text" id="eq" placeholder="f(x)"/>
-  <input type="text" id="n" placeholder="Broj nasumičnih brojeva"/>
-  <input type="text" id="a" placeholder="Početna vrednost intervala"/>
-  <input type="text" id="b" placeholder="Krajnja vrednost intervala"/>
+  <label for="eq">Unesite funkciju:</label>
+  <input type="text" id="eq" placeholder="x ^ 2 + 3x + sqrt(5)"/>
+  <input type="text" id="n" placeholder="Broj podintervala"/>
+  <input type="text" id="a" placeholder="Donja granica integrala"/>
+  <input type="text" id="b" placeholder="Gornja granica integrala"/>
   <input type="submit" value="Analiziraj"/>
 </form>
 
 <div id="plot"></div>
 
-<script>
-  function draw() {
-    try {
-      // compile the expression once
-      const expression = document.getElementById('eq').value
-      const expr = math.compile(expression)
-
-      // evaluate the expression repeatedly for different values of x
-      const xValues1 = math.range(-10, 10, 0.5).toArray() //-10 = A-2 i 10 = B + 2
-      const yValues1 = xValues1.map(function (x) {
-        return expr.evaluate({x: x})
-      })
-      const xValues2 = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
-      const yValues2 = xValues2.map(function (x) {
-        return 0
-      })
-      const xValues3 = [2,2.2,3,3.015,4.5,4.78,5,8.2,8.666666,10]
-      const yValues3 = xValues2.map(function (x) {
-        return 0
-      })
-
-      // render the plot using plotly
-      const trace1 = {
-        x: xValues1,
-        y: yValues1,
-        type: 'lines',
-        fill: 'tonexty',
-        name: 'Funkcija',
-        line: {
-            color: 'rgb(213, 125, 61)'
-        }
-      }
-      const trace2 = {
-        x: xValues2,
-        y: yValues2,
-        type: 'markers',
-        marker: {
-            color: 'rgb(61, 144, 213)',
-            size: 6
-        },
-        line: {
-            width: 0
-        },
-        name: 'Podintervali'
-      }
-      const trace3 = {
-        x: xValues3,
-        y: yValues3,
-        type: 'markers',
-        marker: {
-            color: 'rgb(219, 64, 82)',
-            size: 12
-        },
-        line: {
-            width: 0
-        },
-        name: 'Nasumični brojevi'
-      }
-      const data = [trace1, trace2, trace3]
-      Plotly.newPlot('plot', data)
-    }
-    catch (err) {
-      console.error(err)
-      alert(err)
-    }
-  }
-
-  document.getElementById('form').onsubmit = function (event) {
-    event.preventDefault()
-    draw()
-  }
-
-  draw()
-</script>
+<script src="./functions.ts"></script>
+<script src="./index.js"></script>
 
 </body>
 <footer>
