@@ -78,5 +78,3 @@ document.getElementById('form').onsubmit = function (event) {
     event.preventDefault()
     draw()
 }
-
-draw()
