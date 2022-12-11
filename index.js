@@ -9,7 +9,7 @@ function draw() {
         const F = math.compile(functionString)
 
         // evaluate the expression repeatedly for different values of x
-        const xValues = math.range(A - 2, B + 2, 0.5).toArray()
+        const xValues = math.range(A, B + 0.5, 0.5).toArray()
         const yValues = xValues.map(function (x) {
             return fOfX(x, F)
         })
@@ -66,9 +66,14 @@ function draw() {
         const data = [trace, traceIntervals, tracePoints]
         Plotly.newPlot('plot', data)
 
-        const riemannSum = calculateRiemannSum(points, F)
-        const integral = calculateDefiniteIntegral(N, A, B, F)
-        const delta = Math.abs(riemannSum - integral)
+        let riemannSum = calculateRiemannSum(points, F)
+        let integral = calculateDefiniteIntegral(N, A, B, F)
+        let delta = Math.abs(riemannSum - integral)
+
+        document.getElementById("r").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
+        document.getElementById("i").innerHTML = "Integral funkcije: " + integral;
+        document.getElementById("d").innerHTML = "Apsolutna greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
+
     }
     catch (err) {
         console.error(err)

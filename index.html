@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Analgral</title>
@@ -9,41 +10,49 @@
     input[type=text] {
       width: 300px;
     }
+
     input {
       padding: 6px;
     }
-    body, html, input {
+
+    body,
+    html,
+    input {
       font-family: sans-serif;
       font-size: 11pt;
 
     }
+
     form {
       margin: 20px 0;
     }
-    footer {
-        bottom: 0;
-        position: fixed;
-    }
   </style>
 </head>
+
 <body>
 
-<form>
-  <label for="F">Unesite funkciju:</label>
-  <input type="text" id="F" placeholder="x ^ 2 + 3x + sqrt(5)"/>
-  <input type="text" id="N" placeholder="Broj podintervala"/>
-  <input type="text" id="A" placeholder="Donja granica integrala"/>
-  <input type="text" id="B" placeholder="Gornja granica integrala"/>
-  <input type="button" id="analiziraj" value="Analiziraj"/>
-</form>
+  <form>
+    <label for="F">Unesite funkciju:</label>
+    <input type="text" id="F" placeholder="x ^ 2 + 3x + sqrt(5)" />
+    <input type="text" id="N" placeholder="Broj podintervala" />
+    <input type="text" id="A" placeholder="Donja granica integrala" />
+    <input type="text" id="B" placeholder="Gornja granica integrala" />
+    <input type="button" id="analiziraj" value="Analiziraj" />
+  </form>
 
-<div id="plot"></div>
+  <div id="plot"></div>
 
-<script type="text/javascript" src="./functions.js"></script>
-<script type="text/javascript" src="./index.js"></script>
+  <p class="wrap">
+  <div id="r"></div>
+  <div id="i"> </div>
+  <div id="d"></div>
+  </p>
 
-<footer>
-  <p>Aleksa Siriški (159/22), Miša Stefanović (209/22), Matija Kljajić (137/22)</p>
-</footer>
+  <script type="text/javascript" src="./functions.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+
+  <img style="width: 50px; position: absolute; bottom: 1%; right: 1%;" src="logo.jpg" alt="logo">
+  <p style="position: absolute; bottom: 0; left: 0;">Aleksa Siriški (159/22), Matija Kljajić (137/22)</p>
 </body>
+
 </html>

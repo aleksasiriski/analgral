@@ -34,7 +34,7 @@ function generateIntervalsArray(subIntervals) {
         combined.push(subInterval[0])
         combined.push(subInterval[1])
     })
-    let unique = combined.filter(function(elem, index, self) {
+    let unique = combined.filter(function (elem, index, self) {
         return index === self.indexOf(elem);
     }).sort()
     return unique
@@ -45,7 +45,7 @@ function generatePointsArray(points) {
     points.forEach((point) => {
         combined.push(point[0])
     })
-    let unique = combined.filter(function(elem, index, self) {
+    let unique = combined.filter(function (elem, index, self) {
         return index === self.indexOf(elem);
     }).sort()
     return unique
@@ -66,8 +66,8 @@ function calculateDefiniteIntegral(N, A, B, F) {
     h = (B - A) / N
     z = 4
     for (i = 1; i < N; i += 1) {
-       s = s + z * fOfX(A + i * h, F)
-       z = 6 - z
+        s = s + z * fOfX(A + i * h, F)
+        z = 6 - z
     }
     return (s * h) / 3
 }
