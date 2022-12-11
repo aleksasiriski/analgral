@@ -1,7 +1,7 @@
 function draw() {
     try {
         // compile the expression once
-        const expression = document.getElementById('eq').value
+        const expression = document.getElementById('F').value
         const N = document.getElementById('N').value
         const A = document.getElementById('A').value
         const B = document.getElementById('B').value
