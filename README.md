@@ -5,7 +5,7 @@ Static webpage to calculate Riemann's sum with random subintervals and display t
 It also generates how the function F(x) looks and how randomly the subintervals are chosen.
 
 ## Deployment
-Check out this project [here](https://analgral.tmina.org)
+Live demo is available [here](https://analgral.tmina.org)
 
 ## Contributors
 
