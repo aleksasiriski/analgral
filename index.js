@@ -9,7 +9,7 @@ function fOfX(x, F) {
 function partitionInterval(N, A, B) {
     let nextInterval = [A, B]
     let subIntervals = []
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < N; i++) {
         let newIntervalLimit = randomNumber(nextInterval[0], nextInterval[1])
         subIntervals.push([nextInterval[0], newIntervalLimit])
         nextInterval = [newIntervalLimit, nextInterval[1]]
@@ -73,11 +73,12 @@ function calculateDefiniteIntegral(N, A, B, F) {
 
 function draw() {
     try {
-        // compile the expression once
+        const N = parseInt(document.getElementById('N').value)
+        const A = parseInt(document.getElementById('A').value)
+        const B = parseInt(document.getElementById('B').value)
         const functionString = document.getElementById('F').value
-        const N = document.getElementById('N').value
-        const A = document.getElementById('A').value
-        const B = document.getElementById('B').value
+
+        // compile the expression once
         const F = math.compile(functionString)
 
         // evaluate the expression repeatedly for different values of x
@@ -89,15 +90,15 @@ function draw() {
         const subIntervals = partitionInterval(N, A, B)
         const points = choosePoints(subIntervals)
 
-        const riemannSum = calculateRiemannSum(points, F)
-        const integral = calculateDefiniteIntegral(N, A, B, F)
-        const delta = Math.abs(riemannSum - integral)
-
         const xValuesIntervals = generateIntervalsArray(subIntervals)
-        const yValuesIntervals = xValuesIntervals.map(0)
+        const yValuesIntervals = xValuesIntervals.map(function (x) {
+            return 0
+        })
 
         const xValuesPoints = generatePointsArray(points)
-        const yValuesPoints = xValuesPoints.map(0)
+        const yValuesPoints = xValuesPoints.map(function (x) {
+            return 0
+        })
 
         // render the plot using plotly
         const trace = {
@@ -137,6 +138,10 @@ function draw() {
 
         const data = [trace, traceIntervals, tracePoints]
         Plotly.newPlot('plot', data)
+
+        const riemannSum = calculateRiemannSum(points, F)
+        const integral = calculateDefiniteIntegral(N, A, B, F)
+        const delta = Math.abs(riemannSum - integral)
     }
     catch (err) {
         console.error(err)
@@ -144,7 +149,5 @@ function draw() {
     }
 }
 
-document.getElementById('form').onsubmit = function (event) {
-    event.preventDefault()
-    draw()
-}
+const btn = document.querySelector('#analiziraj')
+btn.addEventListener("click", draw)
