@@ -73,7 +73,7 @@ function draw() {
         let delta = Math.abs(riemannSum - integral)
 
         document.getElementById("riemann").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
-        document.getElementById("integral").innerHTML = "Integral funkcije: " + integral;
+        document.getElementById("integral").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
         document.getElementById("delta").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
 
     }
