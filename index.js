@@ -6,8 +6,8 @@ function fOfX(x, F) {
     return F.evaluate({ x: x })
 }
 
-function partitionInterval(n, interval) {
-    let nextInterval = interval
+function partitionInterval(N, A, B) {
+    let nextInterval = [A, B]
     let subIntervals = []
     for (let i = 0; i < n; i++) {
         let newIntervalLimit = randomNumber(nextInterval[0], nextInterval[1])
@@ -58,7 +58,7 @@ function calculateRiemannSum(points, F) {
     return sum
 }
 
-function calculateDefiniteIntegral(N, [A, B], F) {
+function calculateDefiniteIntegral(N, A, B, F) {
     let i, z, h, s
     N = N + N
     s = fOfX(A, F) * fOfX(B, F)
@@ -86,11 +86,11 @@ function draw() {
             return fOfX(x, F)
         })
 
-        const subIntervals = partitionInterval(N, [A, B])
+        const subIntervals = partitionInterval(N, A, B)
         const points = choosePoints(subIntervals)
 
         const riemannSum = calculateRiemannSum(points, F)
-        const integral = calculateDefiniteIntegral(N, [A, B], F)
+        const integral = calculateDefiniteIntegral(N, A, B, F)
         const delta = Math.abs(riemannSum - integral)
 
         const xValuesIntervals = generateIntervalsArray(subIntervals)
@@ -114,13 +114,9 @@ function draw() {
         const traceIntervals = {
             x: xValuesIntervals,
             y: yValuesIntervals,
-            type: 'markers',
-            marker: {
-                color: 'rgb(61, 144, 213)',
-                size: 6
-            },
+            type: 'lines',
             line: {
-                width: 0
+                color: 'rgb(61, 144, 213)'
             },
             name: 'Podintervali'
         }
