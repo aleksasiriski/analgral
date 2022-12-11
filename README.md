@@ -18,5 +18,3 @@ Check out this project [here](https://analgral.tmina.org)
 * GUI
 * Graphs with Plotly library
 * Comparison of results
-
-### Misa Stefanovic 209/22
