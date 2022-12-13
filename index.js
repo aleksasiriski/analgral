@@ -62,10 +62,12 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
 
         if (evenly) {
             Plotly.newPlot('plotEvenly', data)
+            document.getElementById("integralEvenly").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
             document.getElementById("riemannEvenly").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
             document.getElementById("deltaEvenly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
         } else {
             Plotly.newPlot('plotRandomly', data)
+            document.getElementById("integralRandomly").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
             document.getElementById("riemannRandomly").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
             document.getElementById("deltaRandomly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
         }
@@ -76,23 +78,17 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
     }
 }
 
-async function calculateIntegral(A, B, Fdx) {
-    const integral = await calculateDefiniteIntegral(A, B, Fdx)
-    document.getElementById("integral").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
-}
-
 async function analyze() {
     const N = parseInt(document.getElementById('N').value)
     const A = parseInt(document.getElementById('A').value)
     const B = parseInt(document.getElementById('B').value)
     const functionString = document.getElementById('F').value
-    const functionIntegralString = document.getElementById('Fintegral').value
+    const functionIntegralString = document.getElementById('Fdx').value
 
     // compile the expression once
     const F = math.compile(functionString)
     const Fdx = math.compile(functionIntegralString)
 
-    await calculateIntegral(A, B, Fdx)
     await drawGraph(N, A, B, F, Fdx, true)
     await drawGraph(N, A, B, F, Fdx, false)
 }
