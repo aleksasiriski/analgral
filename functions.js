@@ -8,7 +8,7 @@ function fOfX(x, F) {
     return F.evaluate({ x: x })
 }
 
-function partitionIntervalEvenly(N, A, B) {
+async function partitionIntervalEvenly(N, A, B) {
     let sizeOfInterval = (B - A) / N
     let nextInterval = A
     let subIntervals = []
@@ -21,7 +21,7 @@ function partitionIntervalEvenly(N, A, B) {
     return subIntervals
 }
 
-function partitionIntervalRandomly(N, A, B) {
+async function partitionIntervalRandomly(N, A, B) {
     let nextInterval = A
     let subIntervals = []
     for (let i = 0; i < N - 1; i++) {
@@ -33,16 +33,16 @@ function partitionIntervalRandomly(N, A, B) {
     return subIntervals
 }
 
-function partitionInterval(N, A, B, evenly = true) {
+async function partitionInterval(N, A, B, evenly = true) {
     if (evenly) {
-        return partitionIntervalEvenly(N, A, B)
+        return await partitionIntervalEvenly(N, A, B)
     } else {
-        return partitionIntervalRandomly(N, A, B)
+        return await partitionIntervalRandomly(N, A, B)
     }
     
 }
 
-function choosePoints(subIntervals) {
+async function choosePoints(subIntervals) {
     let points = []
     subIntervals.forEach((subInterval) => {
         let c = randomNumber(subInterval[0], subInterval[1])
@@ -52,7 +52,7 @@ function choosePoints(subIntervals) {
     return points
 }
 
-function generateIntervalsArray(subIntervals) {
+async function generateIntervalsArray(subIntervals) {
     let combined = []
     subIntervals.forEach((subInterval) => {
         combined.push(subInterval[0])
@@ -64,7 +64,7 @@ function generateIntervalsArray(subIntervals) {
     return unique
 }
 
-function generatePointsArray(points) {
+async function generatePointsArray(points) {
     let combined = []
     points.forEach((point) => {
         combined.push(point[0])
@@ -75,7 +75,7 @@ function generatePointsArray(points) {
     return unique
 }
 
-function calculateRiemannSum(points, F) {
+async function calculateRiemannSum(points, F) {
     let sum = 0
     points.forEach((point) => {
         sum += fOfX(point[0], F) * point[1]
@@ -83,6 +83,6 @@ function calculateRiemannSum(points, F) {
     return sum
 }
 
-function calculateDefiniteIntegral(A, B, Fdx) {
+async function calculateDefiniteIntegral(A, B, Fdx) {
     return Fdx.evaluate({ x: B }) - Fdx.evaluate({ x: A })
 }

@@ -6,15 +6,15 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
             return fOfX(x, F)
         })
 
-        const subIntervals = partitionInterval(N, A, B, evenly)
-        const points = choosePoints(subIntervals)
+        const subIntervals = await partitionInterval(N, A, B, evenly)
+        const points = await choosePoints(subIntervals)
 
-        const xValuesIntervals = generateIntervalsArray(subIntervals)
+        const xValuesIntervals = await generateIntervalsArray(subIntervals)
         const yValuesIntervals = xValuesIntervals.map(function (x) {
             return 0
         })
 
-        const xValuesPoints = generatePointsArray(points)
+        const xValuesPoints = await generatePointsArray(points)
         const yValuesPoints = xValuesPoints.map(function (x) {
             return 0
         })
@@ -56,8 +56,8 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
         }
 
         const data = [trace, traceIntervals, tracePoints]
-        const riemannSum = calculateRiemannSum(points, F)
-        const integral = calculateDefiniteIntegral(A, B, Fdx)
+        const riemannSum = await calculateRiemannSum(points, F)
+        const integral = await calculateDefiniteIntegral(A, B, Fdx)
         const delta = Math.abs(riemannSum - integral)
 
         if (evenly) {
@@ -77,7 +77,7 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
 }
 
 async function calculateIntegral(A, B, Fdx) {
-    const integral = calculateDefiniteIntegral(A, B, Fdx)
+    const integral = await calculateDefiniteIntegral(A, B, Fdx)
     document.getElementById("integral").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
 }
 
