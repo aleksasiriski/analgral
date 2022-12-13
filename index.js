@@ -1,15 +1,5 @@
-async function drawGraph(evenly = true) {
+async function drawGraph(N, A, B, F, Fdx, evenly = true) {
     try {
-        const N = parseInt(document.getElementById('N').value)
-        const A = parseInt(document.getElementById('A').value)
-        const B = parseInt(document.getElementById('B').value)
-        const functionString = document.getElementById('F').value
-        const functionIntegralString = document.getElementById('Fintegral').value
-
-        // compile the expression once
-        const F = math.compile(functionString)
-        const Fdx = math.compile(functionIntegralString)
-
         // evaluate the expression repeatedly for different values of x
         const xValues = math.range(A, B + 0.5, 0.5).toArray()
         const yValues = xValues.map(function (x) {
@@ -66,20 +56,19 @@ async function drawGraph(evenly = true) {
         }
 
         const data = [trace, traceIntervals, tracePoints]
+        const riemannSum = calculateRiemannSum(points, F)
+        const integral = calculateDefiniteIntegral(A, B, Fdx)
+        const delta = Math.abs(riemannSum - integral)
+
         if (evenly) {
             Plotly.newPlot('plotEvenly', data)
+            document.getElementById("riemannEvenly").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
+            document.getElementById("deltaEvenly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
         } else {
             Plotly.newPlot('plotRandomly', data)
+            document.getElementById("riemannRandomly").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
+            document.getElementById("deltaRandomly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
         }
-
-        let riemannSum = calculateRiemannSum(points, F)
-        let integral = calculateDefiniteIntegral(A, B, Fdx)
-        let delta = Math.abs(riemannSum - integral)
-
-        document.getElementById("riemann").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
-        document.getElementById("integral").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
-        document.getElementById("delta").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
-
     }
     catch (err) {
         console.error(err)
@@ -87,9 +76,25 @@ async function drawGraph(evenly = true) {
     }
 }
 
+async function calculateIntegral(A, B, Fdx) {
+    const integral = calculateDefiniteIntegral(A, B, Fdx)
+    document.getElementById("integral").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
+}
+
 async function analyze() {
-    await drawGraph(true)
-    await drawGraph(false)
+    const N = parseInt(document.getElementById('N').value)
+    const A = parseInt(document.getElementById('A').value)
+    const B = parseInt(document.getElementById('B').value)
+    const functionString = document.getElementById('F').value
+    const functionIntegralString = document.getElementById('Fintegral').value
+
+    // compile the expression once
+    const F = math.compile(functionString)
+    const Fdx = math.compile(functionIntegralString)
+
+    await calculateIntegral(A, B, Fdx)
+    await drawGraph(N, A, B, F, Fdx, true)
+    await drawGraph(N, A, B, F, Fdx, false)
 }
 
 const btn = document.querySelector('#analyze')
