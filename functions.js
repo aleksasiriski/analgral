@@ -8,7 +8,20 @@ function fOfX(x, F) {
     return F.evaluate({ x: x })
 }
 
-function partitionInterval(N, A, B) {
+function partitionIntervalEvenly(N, A, B) {
+    let sizeOfInterval = (B - A) / N
+    let nextInterval = A
+    let subIntervals = []
+    for (let i = 0; i < N - 1; i++) {
+        var newIntervalLimit = nextInterval + sizeOfInterval
+        subIntervals.push([nextInterval, newIntervalLimit])
+        nextInterval = newIntervalLimit
+    }
+    subIntervals.push([newIntervalLimit, B])
+    return subIntervals
+}
+
+function partitionIntervalRandomly(N, A, B) {
     let nextInterval = A
     let subIntervals = []
     for (let i = 0; i < N - 1; i++) {
@@ -18,6 +31,15 @@ function partitionInterval(N, A, B) {
     }
     subIntervals.push([newIntervalLimit, B])
     return subIntervals
+}
+
+function partitionInterval(N, A, B, evenly = true) {
+    if (evenly) {
+        return partitionIntervalEvenly(N, A, B)
+    } else {
+        return partitionIntervalRandomly(N, A, B)
+    }
+    
 }
 
 function choosePoints(subIntervals) {

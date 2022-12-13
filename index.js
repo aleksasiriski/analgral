@@ -1,4 +1,4 @@
-function draw() {
+function draw(evenly = true) {
     try {
         const N = parseInt(document.getElementById('N').value)
         const A = parseInt(document.getElementById('A').value)
@@ -16,7 +16,7 @@ function draw() {
             return fOfX(x, F)
         })
 
-        const subIntervals = partitionInterval(N, A, B)
+        const subIntervals = partitionInterval(N, A, B, evenly)
         const points = choosePoints(subIntervals)
 
         const xValuesIntervals = generateIntervalsArray(subIntervals)
@@ -83,5 +83,8 @@ function draw() {
     }
 }
 
-const btn = document.querySelector('#analyze')
-btn.addEventListener("click", draw)
+const btnE = document.querySelector('#analyzeEvenly')
+btnE.addEventListener("click", draw(true))
+
+const btnR = document.querySelector('#analyzeRandomly')
+btnR.addEventListener("click", draw(false))
