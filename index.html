@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Analgral</title>
-  <script src="https://cdn.rawgit.com/nquinlan/better-random-numbers-for-javascript-mirror/master/support/js/Mash.js"></script>
-  <script src="https://cdn.rawgit.com/nquinlan/better-random-numbers-for-javascript-mirror/master/support/js/Alea.js"></script>
+  <script
+    src="https://cdn.rawgit.com/nquinlan/better-random-numbers-for-javascript-mirror/master/support/js/Mash.js"></script>
+  <script
+    src="https://cdn.rawgit.com/nquinlan/better-random-numbers-for-javascript-mirror/master/support/js/Alea.js"></script>
   <script src="https://unpkg.com/mathjs@11.5.0/lib/browser/math.js"></script>
   <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
   <style>
@@ -26,7 +28,7 @@
     }
 
     form {
-      margin: 20px 0;
+      margin: 1% 0%;
     }
   </style>
 </head>
@@ -35,12 +37,12 @@
 
   <form>
     <label>Unesite funkciju:</label>
-    <input type="text" id="F" placeholder="x ^ 2" />
-    <input type="text" id="Fintegral" placeholder="x ^ 3 / 3" />
-    <input type="text" id="N" placeholder="Broj podintervala" />
-    <input type="text" id="A" placeholder="Donja granica integrala" />
-    <input type="text" id="B" placeholder="Gornja granica integrala" />
-    <input type="button" id="analyze" value="Analiziraj" />
+    <input style="width: 15%;" type="text" id="F" placeholder="x ^ 2" />
+    <input style="width: 15%;" type="text" id="Fintegral" placeholder="x ^ 3 / 3" />
+    <input style="width: 15%;" type="text" id="N" placeholder="Broj podintervala" />
+    <input style="width: 15%;" type="text" id="A" placeholder="Donja granica integrala" />
+    <input style="width: 15%;" type="text" id="B" placeholder="Gornja granica integrala" />
+    <input style="width: 10%;" type="button" id="analyze" value="Analiziraj" />
   </form>
 
   <div id="plot"></div>
@@ -51,10 +53,17 @@
   <div id="delta"></div>
   </p>
 
-  <span style="position: absolute; bottom: 1%; right: 1%;">
+  <span style="position: absolute; bottom: 0; right: 1.5%;">
+    <a style="text-decoration: none; text-align: right;" href="https://github.com/aleksasiriski/analgral">Source code</a>
+  </span>
+  <span style="position: absolute; bottom: 2%; right: 1%;">
     <img style="width: 50px;" src="logo1.jpg" alt="pmf"> <img style="width: 50px;" src="logo2.jpg" alt="uns">
   </span>
-  <p style="position: absolute; bottom: 0; text-align: left;">Aleksa Siriški (159/22), Matija Kljajić (137/22), <a href="https://github.com/aleksasiriski/analgral">Source code</a></p>
+  <p>
+    <span style="position: absolute; bottom: 0; text-align: left;">
+      Aleksa Siriški (159/22), Matija Kljajić (137/22)
+    </span>
+  </p>
 
   <script type="text/javascript" src="./functions.js"></script>
   <script type="text/javascript" src="./index.js"></script>
