@@ -1,4 +1,4 @@
-function draw(evenly = true) {
+async function drawGraph(evenly = true) {
     try {
         const N = parseInt(document.getElementById('N').value)
         const A = parseInt(document.getElementById('A').value)
@@ -66,7 +66,11 @@ function draw(evenly = true) {
         }
 
         const data = [trace, traceIntervals, tracePoints]
-        Plotly.newPlot('plot', data)
+        if (evenly) {
+            Plotly.newPlot('plotEvenly', data)
+        } else {
+            Plotly.newPlot('plotRandomly', data)
+        }
 
         let riemannSum = calculateRiemannSum(points, F)
         let integral = calculateDefiniteIntegral(A, B, Fdx)
@@ -83,8 +87,10 @@ function draw(evenly = true) {
     }
 }
 
-const btnE = document.querySelector('#analyzeEvenly')
-btnE.addEventListener("click", draw(true))
+async function analyze() {
+    await drawGraph(true)
+    await drawGraph(false)
+}
 
-const btnR = document.querySelector('#analyzeRandomly')
-btnR.addEventListener("click", draw(false))
+const btn = document.querySelector('#analyze')
+btn.addEventListener("click", analyze)
