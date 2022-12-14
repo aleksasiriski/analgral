@@ -28,27 +28,54 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+      <form>
       <div class="row">
-        <form>
-          <div class="col-sm-12 text-center">
-            <h1>Unesite podatke:</h1>
+        <div class="col-sm-12 text-center text-white">
+          <h1>Unesite podatke:</h1>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2 text-center">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="Nlabel">N</span>
+            <input type="text" id="N" class="form-control" placeholder="Broj podintervala" aria-label="N" aria-describedby="Nlabel">
           </div>
-          <br>
-          <div class="col-sm-12 text-center">
-            <input type="text" id="F" placeholder="x ^ 2" />
-            <input type="text" id="Fdx" placeholder="x ^ 3 / 3" />
-            <input type="text" id="N" placeholder="Broj podintervala" />
-            <input type="text" id="A" placeholder="Donja granica integrala" />
-            <input type="text" id="B" placeholder="Gornja granica integrala" />
+        </div>
+        <div class="col-sm-2 text-center">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="Alabel">A</span>
+            <input type="text" id="A" class="form-control" placeholder="Donja granica" aria-label="A" aria-describedby="Alabel">
           </div>
-          <br>
-          <div class="col-sm-12">
-            <div class="text-center">
-              <button class="btn btn-primary" type="button" id="analyze">Analiziraj</button>
-            </div>
+        </div>
+        <div class="col-sm-2 text-center">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="Blabel">B</span>
+            <input type="text" id="B" class="form-control" placeholder="Gornja granica" aria-label="B" aria-describedby="Blabel">
           </div>
-        </form>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4 text-center">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="Flabel">F(x)</span>
+            <input type="text" id="F" class="form-control" placeholder="x ^ 2" aria-label="F" aria-describedby="Flabel">
+          </div>
+        </div>
+        <div class="col-sm-4 text-center">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="Fdxlabel">fdx(x)</span>
+            <input type="text" id="Fdx" class="form-control" placeholder="x ^ 3 / 3" aria-label="Fdx" aria-describedby="Fdxlabel">
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
       </div>
+      <div class="row"></div>
+        <div class="col-sm-12">
+          <div class="text-center">
+            <button class="btn btn-primary" type="button" id="analyze">Analiziraj</button>
+          </div>
+        </div>
+        </div>
+      </form>
     </div>
   </nav>
 
@@ -79,9 +106,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-3 text-center">
-          <a href="https://github.com/aleksasiriski"><p>Aleksa Siriški (159/22)</p></a>
+          <a class="link-secondary" href="https://github.com/aleksasiriski"><p class="fs-4">Aleksa Siriški (159/22)</p></a>
           <br>
-          <a href="https://github.com/matijakljajic"><p>Matija Kljajić (137/22)</p></a>
+          <a class="link-secondary" href="https://github.com/matijakljajic"><p class="fs-4">Matija Kljajić (137/22)</p></a>
         </div>
         <div class="col-sm-3"></div>
         <div class="col-sm-3"></div>
@@ -89,7 +116,7 @@
           <img style="width: 100px;" src="logo1.jpg" alt="pmf">
           <img style="width: 100px;" src="logo2.jpg" alt="uns">
           <br>
-          <a style="text-decoration: none; text-align: right;" href="https://github.com/aleksasiriski/analgral">Source code</a>
+          <a class="link-primary" href="https://github.com/aleksasiriski/analgral"><p class="fs-5">Source code</p></a>
         </div>
       </div>
     </div>
