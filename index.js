@@ -52,7 +52,7 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
             line: {
                 width: 0
             },
-            name: 'Nasumični brojevi'
+            name: 'Tačke'
         }
 
         const data = [trace, traceIntervals, tracePoints]
@@ -61,12 +61,18 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
         const delta = Math.abs(riemannSum - integral)
 
         if (evenly) {
-            Plotly.newPlot('plotEvenly', data)
+            let layout = {
+                title: "Ekvidistantne tačke"
+            };
+            Plotly.newPlot('plotEvenly', data, layout, { scrollZoom: true, displayModeBar: false })
             document.getElementById("integralEvenly").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
             document.getElementById("riemannEvenly").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
             document.getElementById("deltaEvenly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
         } else {
-            Plotly.newPlot('plotRandomly', data)
+            let layout = {
+                title: "Nasumične tačke"
+            };
+            Plotly.newPlot('plotRandomly', data, layout, { scrollZoom: true, displayModeBar: false })
             document.getElementById("integralRandomly").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
             document.getElementById("riemannRandomly").innerHTML = "Rimanova suma: " + Math.round(riemannSum * 100000) / 100000;
             document.getElementById("deltaRandomly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
@@ -95,3 +101,5 @@ async function analyze() {
 
 const btn = document.querySelector('#analyze')
 btn.addEventListener("click", analyze)
+
+analyze()
