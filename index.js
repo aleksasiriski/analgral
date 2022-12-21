@@ -62,7 +62,7 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
 
         if (evenly) {
             let layout = {
-                title: "Ekvidistantne tačke"
+                title: "Ekvidistantni podintervali"
             };
             Plotly.newPlot('plotEvenly', data, layout, { scrollZoom: true, displayModeBar: false })
             document.getElementById("integralEvenly").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
@@ -70,7 +70,7 @@ async function drawGraph(N, A, B, F, Fdx, evenly = true) {
             document.getElementById("deltaEvenly").innerHTML = "Greška Rimanove sume: " + Math.round(delta * 100000) / 100000;
         } else {
             let layout = {
-                title: "Nasumične tačke"
+                title: "Nasumični podintervali"
             };
             Plotly.newPlot('plotRandomly', data, layout, { scrollZoom: true, displayModeBar: false })
             document.getElementById("integralRandomly").innerHTML = "Integral funkcije: " + Math.round(integral * 100000) / 100000;
