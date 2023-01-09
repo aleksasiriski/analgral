@@ -15,6 +15,6 @@ Live demo is available [here](https://analgral.tmina.org)
 * Functions
 
 ### Matija Kljajić 137/22
-* GUI
+* UI/UX
 * Graphs with Plotly library
 * Comparison of results
