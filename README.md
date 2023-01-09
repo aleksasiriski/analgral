@@ -2,7 +2,7 @@
 
 Static webpage to calculate Riemann's sum with equidistant and random subintervals.
 
-It also generates how the function F(x) looks and how randomly the subintervals are chosen.
+It also generates how the function F(x) looks and how randomly the points in subintervals are chosen.
 
 ## Deployment
 Live demo is available [here](https://analgral.tmina.org)
