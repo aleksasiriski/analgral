@@ -88,12 +88,17 @@ async function analyze() {
     const N = parseInt(document.getElementById('N').value)
     const A = parseInt(document.getElementById('A').value)
     const B = parseInt(document.getElementById('B').value)
-    const functionString = document.getElementById('F').value
-    const functionIntegralString = document.getElementById('Fdx').value
+    const fStr = document.getElementById('F').value
+
+    // caclulate fdxStr
+    const fdxStr = nerdamer.integrate(fStr).toString()
+
+    // print f and fdx
+    console.log("f: " + fStr + " => fdx: " + fdxStr)
 
     // compile the expression once
-    const F = math.compile(functionString)
-    const Fdx = math.compile(functionIntegralString)
+    const F = math.compile(fStr)
+    const Fdx = math.compile(fdxStr)
 
     await drawGraph(N, A, B, F, Fdx, true)
     await drawGraph(N, A, B, F, Fdx, false)
