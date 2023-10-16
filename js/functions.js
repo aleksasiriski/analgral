@@ -1,7 +1,5 @@
-var random = new Alea()
-
 function randomNumber(A, B) {
-    return random() * (B - A) + A
+    return math.random() * (B - A) + A
 }
 
 function fOfX(x, F) {
