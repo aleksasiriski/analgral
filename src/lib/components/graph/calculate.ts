@@ -4,7 +4,7 @@ function randomNumber(A: number, B: number) {
 	return random() * (B - A) + A;
 }
 
-export function fOfX(x: number, F: any) {
+export function fOfX(x: number, F: EvalFunction) {
 	return F.evaluate({ x: x });
 }
 
@@ -98,6 +98,6 @@ export async function calculateRiemannSum(points: NumberPair[], F: EvalFunction)
 	return sum;
 }
 
-export async function calculateDefiniteIntegral(A: number, B: number, Fdx: any) {
+export async function calculateDefiniteIntegral(A: number, B: number, Fdx: EvalFunction) {
 	return Fdx.evaluate({ x: B }) - Fdx.evaluate({ x: A });
 }
