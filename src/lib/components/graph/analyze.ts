@@ -13,6 +13,9 @@ export async function analyze(N: number, A: number, B: number, FStr: string) {
 	const F = compile(FStr);
 	const Fdx = compile(fdxStr);
 
-	await drawGraph(N, A, B, F, Fdx, true);
-	await drawGraph(N, A, B, F, Fdx, false);
+	// draw the graphs
+	const graphsPromises = [];
+	graphsPromises.push(drawGraph(N, A, B, F, Fdx, true));
+	graphsPromises.push(drawGraph(N, A, B, F, Fdx, false));
+	await Promise.all(graphsPromises);
 }
