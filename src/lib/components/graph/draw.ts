@@ -1,6 +1,6 @@
 import type { EvalFunction } from 'mathjs';
 
-import { range } from 'mathjs';
+import { range, abs, round } from 'mathjs';
 
 import {
 	fOfX,
@@ -84,7 +84,7 @@ export async function drawGraph(
 		const data = [trace, traceIntervals, tracePoints];
 		const riemannSum = await calculateRiemannSum(points, F);
 		const integral = await calculateDefiniteIntegral(A, B, Fdx);
-		const delta = Math.abs(riemannSum - integral);
+		const delta = abs(riemannSum - integral);
 
 		if (evenly) {
 			let layout = {
@@ -92,22 +92,22 @@ export async function drawGraph(
 			};
 			newPlot('plotEvenly', data, layout, { scrollZoom: true, displayModeBar: false });
 			document.getElementById('integralEvenly').innerHTML =
-				'Integral funkcije: ' + Math.round(integral * 100000) / 100000;
+				'Integral funkcije: ' + round(integral * 100000) / 100000;
 			document.getElementById('riemannEvenly').innerHTML =
-				'Rimanova suma: ' + Math.round(riemannSum * 100000) / 100000;
+				'Rimanova suma: ' + round(riemannSum * 100000) / 100000;
 			document.getElementById('deltaEvenly').innerHTML =
-				'Greška Rimanove sume: ' + Math.round(delta * 100000) / 100000;
+				'Greška Rimanove sume: ' + round(delta * 100000) / 100000;
 		} else {
 			let layout = {
 				title: 'Nasumični podintervali'
 			};
 			newPlot('plotRandomly', data, layout, { scrollZoom: true, displayModeBar: false });
 			document.getElementById('integralRandomly').innerHTML =
-				'Integral funkcije: ' + Math.round(integral * 100000) / 100000;
+				'Integral funkcije: ' + round(integral * 100000) / 100000;
 			document.getElementById('riemannRandomly').innerHTML =
-				'Rimanova suma: ' + Math.round(riemannSum * 100000) / 100000;
+				'Rimanova suma: ' + round(riemannSum * 100000) / 100000;
 			document.getElementById('deltaRandomly').innerHTML =
-				'Greška Rimanove sume: ' + Math.round(delta * 100000) / 100000;
+				'Greška Rimanove sume: ' + round(delta * 100000) / 100000;
 		}
 	} catch (err) {
 		console.error(err);
