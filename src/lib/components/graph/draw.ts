@@ -1,3 +1,7 @@
+// CommonJS import
+import Plotly from 'plotly.js-dist-min';
+
+// ES import
 import type { EvalFunction } from 'mathjs';
 
 import { range, abs, round } from 'mathjs';
@@ -11,9 +15,18 @@ import {
 	generatePointsArray,
 	calculateRiemannSum,
 	calculateDefiniteIntegral
-} from './calculate';
+} from '$lib/components/graph/calculate';
 
-import newPlot from "plotly";
+function plotGraph(divId: string, data: any, layout: any) {
+	Plotly.newPlot(
+		divId,
+		/* JSON object */ {
+			data: data,
+			layout: layout
+		}
+	);
+	// { scrollZoom: true, displayModeBar: false }
+}
 
 export async function drawGraph(
 	N: number,
@@ -90,7 +103,8 @@ export async function drawGraph(
 			let layout = {
 				title: 'Ekvidistantni podintervali'
 			};
-			newPlot('plotEvenly', data, layout, { scrollZoom: true, displayModeBar: false });
+			plotGraph('plotEvenly', data, layout);
+			// todo: move to sveltekit bind vars
 			document.getElementById('integralEvenly').innerHTML =
 				'Integral funkcije: ' + round(integral * 100000) / 100000;
 			document.getElementById('riemannEvenly').innerHTML =
@@ -101,7 +115,8 @@ export async function drawGraph(
 			let layout = {
 				title: 'Nasumični podintervali'
 			};
-			newPlot('plotRandomly', data, layout, { scrollZoom: true, displayModeBar: false });
+			plotGraph('plotRandomly', data, layout);
+			// todo: move to sveltekit bind vars
 			document.getElementById('integralRandomly').innerHTML =
 				'Integral funkcije: ' + round(integral * 100000) / 100000;
 			document.getElementById('riemannRandomly').innerHTML =
