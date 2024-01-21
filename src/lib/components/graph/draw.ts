@@ -13,7 +13,7 @@ import {
 	calculateDefiniteIntegral
 } from './calculate';
 
-import { newPlot } from 'plotly';
+import newPlot from "plotly";
 
 export async function drawGraph(
 	N: number,

@@ -1,17 +1,38 @@
-<script type="js">
+<script lang="ts">
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Drawer from '$lib/components/ui/drawer';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import { Button } from '$lib/components/ui/button';
 	import { mediaQuery } from 'svelte-legos';
+
+	import { analyze } from '$lib/components/graph/analyze';
+
 	let open = false;
 	const isDesktop = mediaQuery('(min-width: 768px)');
 
+	let dialogN: number;
+	let dialogA: number;
+	let dialogB: number;
+	let dialogF: string;
+
+	let drawerN: number;
+	let drawerA: number;
+	let drawerB: number;
+	let drawerF: string;
+
 	// ovako sam prvo napisao ali vrv ne ide ovako (pogledaj dole kako je povezano, nisam probao)?
 	function submit() {
-		// analyze();
-		// analyze() i originalni kod su privremeno u static-u
+		
+		console.log("Logged!");
+		
+		let N:number = dialogN != null ? dialogN : drawerN;
+		let A:number = dialogA != null ? dialogA : drawerA;
+		let B:number = dialogB != null ? dialogB : drawerB;
+		let F:string = dialogF != null ? dialogF : drawerF;
+		
+		analyze(N, A, B, F);
+		
 	}
 </script>
 
@@ -31,19 +52,19 @@
 				<form class="grid items-start gap-4">
 					<div class="grid gap-2">
 						<Label for="N">Broj podintervala:</Label>
-						<Input type="number" id="N" value="10" />
+						<Input type="number" id="N" placeholder="10" bind:value="{ dialogN }" />
 					</div>
 					<div class="grid gap-2">
 						<Label for="A">Donja granica:</Label>
-						<Input type="number" id="A" value="0" />
+						<Input type="number" id="A" placeholder="0" bind:value="{ dialogA }" />
 					</div>
 					<div class="grid gap-2">
 						<Label for="B">Gornja granica:</Label>
-						<Input type="number" id="B" value="10" />
+						<Input type="number" id="B" placeholder="10" bind:value="{ dialogB }" />
 					</div>
 					<div class="grid gap-2">
 						<Label for="F">Funkcija za obrađivanje:</Label>
-						<Input type="text" id="F" value="x^2" />
+						<Input type="text" id="F" placeholder="x^2" bind:value="{ dialogF }" />
 					</div>
 					<Button type="submit" on:click={() => submit()}>Generiši Grafove</Button>
 				</form>
@@ -64,19 +85,19 @@
 				<form class="grid items-start gap-4 px-4">
 					<div class="grid gap-2">
 						<Label for="N">Broj podintervala:</Label>
-						<Input type="number" id="N" value="10" />
+						<Input type="number" id="N" placeholder="10" bind:value="{ drawerN }" />
 					</div>
 					<div class="grid gap-2">
 						<Label for="A">Donja granica:</Label>
-						<Input type="number" id="A" value="0" />
+						<Input type="number" id="A" placeholder="0" bind:value="{ drawerA }" />
 					</div>
 					<div class="grid gap-2">
 						<Label for="B">Gornja granica:</Label>
-						<Input type="number" id="B" value="10" />
+						<Input type="number" id="B" placeholder="10" bind:value="{ drawerB }" />
 					</div>
 					<div class="grid gap-2">
 						<Label for="F">Funkcija za obrađivanje:</Label>
-						<Input type="text" id="F" value="x^2" />
+						<Input type="text" id="F" placeholder="x^2" bind:value="{ drawerF }" />
 					</div>
 					<Button type="submit" on:click={() => submit()}>Generiši Grafove</Button>
 				</form>
