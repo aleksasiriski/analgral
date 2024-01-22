@@ -6,10 +6,11 @@
 
 	export let drawer: boolean = false;
 
-	const defaultN = 10;
+	// higher N means more accurate calculation
+	const defaultN = 1000;
 	const defaultA = 0;
-	const defaultB = 10;
-	const defaultF = 'sec(x)^2';
+	const defaultB = 1;
+	const defaultF = 'x^2';
 
 	let valueN: number;
 	let valueA: number;
