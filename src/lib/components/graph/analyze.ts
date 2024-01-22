@@ -11,7 +11,7 @@ import { drawGraph } from '$lib/components/graph/draw';
 
 export async function analyze(N: number, A: number, B: number, FStr: string) {
 	// caclulate fdxStr
-	const nerdFdx = nerdamer('integrate(sec(x)^2, x)');
+	const nerdFdx = nerdamer('integrate(' + FStr + ', x)');
 	const fdxStr = nerdFdx.toString();
 
 	// print f and fdx

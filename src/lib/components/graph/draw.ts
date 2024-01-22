@@ -18,12 +18,11 @@ import {
 } from '$lib/components/graph/calculate';
 
 function plotGraph(divId: string, data: any, layout: any) {
-	Plotly.newPlot(
+	new Plotly.newPlot(
 		divId,
-		/* JSON object */ {
-			data: data,
-			layout: layout
-		}
+		data,
+		layout,
+		{ staticPlot: true, displayModeBar: false, responsive: true }
 	);
 	// { scrollZoom: true, displayModeBar: false }
 }

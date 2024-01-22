@@ -9,7 +9,7 @@
 	const defaultN = 10;
 	const defaultA = 0;
 	const defaultB = 10;
-	const defaultF = 'x^2';
+	const defaultF = 'sec(x)^2';
 
 	let valueN: number;
 	let valueA: number;
