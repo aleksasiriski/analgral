@@ -15,7 +15,8 @@ const config = {
 			// default options are shown. On some platforms
 			// these options are set automatically — see below
 			runtime: 'edge',
-			memory: '128'
+			memory: '128',
+			split: 'true'
 		}),
 		alias: {
 			'@/*': './path/to/lib/*'
