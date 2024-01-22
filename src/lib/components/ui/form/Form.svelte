@@ -19,9 +19,9 @@
 	function submit() {
 		console.log('Analyzing...');
 
-		const N = valueN != null ? valueN : defaultN;
-		const A = valueA != null ? valueA : defaultA;
-		const B = valueB != null ? valueB : defaultB;
+		const N = valueN != null ? Number(valueN) : defaultN;
+		const A = valueA != null ? Number(valueA) : defaultA;
+		const B = valueB != null ? Number(valueB) : defaultB;
 		const F = valueF != null ? valueF : defaultF;
 
 		analyze(N, A, B, F);
