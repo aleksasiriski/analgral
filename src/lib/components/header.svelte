@@ -10,7 +10,7 @@
 	const isDesktop = mediaQuery('(min-width: 768px)');
 </script>
 
-<div class="flex w-full items-center justify-center pt-1">
+<div class="flex w-full items-center justify-center pt-1 sm:pt-3">
 	{#if $isDesktop}
 		<Dialog.Root bind:open>
 			<Dialog.Trigger asChild let:builder>

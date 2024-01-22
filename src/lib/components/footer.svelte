@@ -1,4 +1,4 @@
-<div class="flex w-full px-2 pt-1 justify-between max-[280px]:justify-center items-center">
+<div class="flex w-full px-3 py-1 justify-between max-[280px]:justify-center items-center">
     <div class="flex flex-col items-center max-[280px]:hidden">
         <a href="https://github.com/aleksasiriski" class="hover:underline">Aleksa Siriški (159/22)</a>
         <a href="https://github.com/matijakljajic" class="hover:underline">Matija Kljajic (137/22)</a>
@@ -10,7 +10,7 @@
             <img src="/logo_university.png" alt="University Logo" class="max-w-12">
         </div>
         <div class="text-center">
-            <a href="https://github.com/aleksasiriski/analgral" class="hover:underline">Source code</a>
+            <a href="https://github.com/aleksasiriski/analgral" class="text-[#0D3373] hover:underline">Source code</a>
         </div>
     </div>
 </div>
