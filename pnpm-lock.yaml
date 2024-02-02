@@ -105,8 +105,8 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.3.3
   vaul-svelte:
-    specifier: ^0.1.0
-    version: 0.1.0(svelte@4.2.9)
+    specifier: ^0.2.1
+    version: 0.2.1(svelte@4.2.9)
   vite:
     specifier: ^5.0.3
     version: 5.0.12(@types/node@20.11.5)
@@ -483,20 +483,6 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
-    dev: true
-
-  /@melt-ui/svelte@0.67.0(svelte@4.2.9):
-    resolution: {integrity: sha512-fd9PsDE6sKbeyExagqH0nOpZEnDqyr2efbkjfmCRRYXVW5vlDEOPaSB+mg4Tjch121102sFH1Od+MlXwmeHy3A==}
-    peerDependencies:
-      svelte: '>=3 <5'
-    dependencies:
-      '@floating-ui/core': 1.5.3
-      '@floating-ui/dom': 1.5.4
-      '@internationalized/date': 3.5.1
-      dequal: 2.0.3
-      focus-trap: 7.5.4
-      nanoid: 4.0.2
-      svelte: 4.2.9
     dev: true
 
   /@melt-ui/svelte@0.68.0(svelte@4.2.9):
@@ -1080,19 +1066,19 @@ packages:
       file-uri-to-path: 1.0.0
     dev: true
 
-  /bits-ui@0.13.6(svelte@4.2.9):
-    resolution: {integrity: sha512-LmbWgtriqfotontFi1lC6tEB56HOLP4YpwVKX3qrHxEMfMAyc/NFQgtGOHizTGMmUUkdVtCE37PA1Wnk6gsUZg==}
+  /bits-ui@0.15.1(svelte@4.2.9):
+    resolution: {integrity: sha512-1Np8bT6W6SC2tKESfm0CySW+7+xU5S0GuUZqIxC41atZE3WIRiRlzXEYHxW88w6UaLFzZ51ns4E7pchkdV5XCQ==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
       '@internationalized/date': 3.5.1
-      '@melt-ui/svelte': 0.67.0(svelte@4.2.9)
+      '@melt-ui/svelte': 0.68.0(svelte@4.2.9)
       nanoid: 5.0.4
       svelte: 4.2.9
     dev: true
 
-  /bits-ui@0.15.1(svelte@4.2.9):
-    resolution: {integrity: sha512-1Np8bT6W6SC2tKESfm0CySW+7+xU5S0GuUZqIxC41atZE3WIRiRlzXEYHxW88w6UaLFzZ51ns4E7pchkdV5XCQ==}
+  /bits-ui@0.16.0(svelte@4.2.9):
+    resolution: {integrity: sha512-HEkuVDyUG9dTWtKujKpdDsGOe9GRmuYOEF9yGbjVwNazxMQDQa9deUX8vM3ofGBWaJgr1cEu88p38kP5Z5gQ8w==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
@@ -2132,12 +2118,6 @@ packages:
     hasBin: true
     dev: true
 
-  /nanoid@4.0.2:
-    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
-    engines: {node: ^14 || ^16 || >=18}
-    hasBin: true
-    dev: true
-
   /nanoid@5.0.4:
     resolution: {integrity: sha512-vAjmBf13gsmhXSgBrtIclinISzFFy22WwCYoyilZlsrRXNIHSwgFQ1bEdjRwMT3aoadeIF6HMuDRlOxzfXV8ig==}
     engines: {node: ^18 || >=20}
@@ -3118,12 +3098,12 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vaul-svelte@0.1.0(svelte@4.2.9):
-    resolution: {integrity: sha512-8Ab5at9QsA/JeJ3M5ltrzE5+vFt3v4cjgZHYeSVbhHXZ7KV1JWNjkQZ1IJv52HirnzhZPzfKt+EjWtsWHeWBoQ==}
+  /vaul-svelte@0.2.1(svelte@4.2.9):
+    resolution: {integrity: sha512-563E/ZwOOXSYBaqRvhxS9BmgwY7zumFnF8kT9cMjMI5OiEzDccfX5E4fhwsLUZFFvYUNc6kYKeG1R8EiQ3KQnw==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
-      bits-ui: 0.13.6(svelte@4.2.9)
+      bits-ui: 0.16.0(svelte@4.2.9)
       svelte: 4.2.9
     dev: true
 
