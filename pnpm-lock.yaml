@@ -48,8 +48,8 @@ devDependencies:
     specifier: ^2.35.1
     version: 2.35.1(eslint@8.56.0)(svelte@4.2.9)
   formsnap:
-    specifier: ^0.4.2
-    version: 0.4.2(svelte@4.2.9)(sveltekit-superforms@1.13.4)(zod@3.22.4)
+    specifier: ^0.4.3
+    version: 0.4.3(svelte@4.2.9)(sveltekit-superforms@1.13.4)(zod@3.22.4)
   mathjs:
     specifier: ^12.3.0
     version: 12.3.0
@@ -1638,8 +1638,8 @@ packages:
       signal-exit: 4.1.0
     dev: true
 
-  /formsnap@0.4.2(svelte@4.2.9)(sveltekit-superforms@1.13.4)(zod@3.22.4):
-    resolution: {integrity: sha512-iUhGDUcjUW9tCOYLZ1rbNR1wkjtEbrXDxhUnl7+zPKjP5K8ikDfhZWH1cquKdUcHJoSE7M/Rruvg0fNQMjSNtA==}
+  /formsnap@0.4.3(svelte@4.2.9)(sveltekit-superforms@1.13.4)(zod@3.22.4):
+    resolution: {integrity: sha512-PWVq78XVUHhAU1tcVGKeGamk6B4Opkk1uVNRW2YofiQpnA5Bry1c3TQjB9cVDw5u4oAwmDvIoAzVHlrAIgc+tw==}
     peerDependencies:
       svelte: ^4.0.0
       sveltekit-superforms: ^1.7.1
