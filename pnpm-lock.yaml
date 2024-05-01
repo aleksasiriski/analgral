@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^2.1.0
     version: 2.1.0
   embla-carousel-svelte:
-    specifier: 8.0.0-rc19
-    version: 8.0.0-rc19(svelte@4.2.12)
+    specifier: 8.0.2
+    version: 8.0.2(svelte@4.2.12)
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -1330,26 +1330,26 @@ packages:
     resolution: {integrity: sha512-z/6oZ/Muqk4BaE7P69bXhUhpJbUM9ZJeka43ZwxsDshKtePns4mhBlh8bU5+yrnOnz3fhG82XLzGUXazOmsWnA==}
     dev: true
 
-  /embla-carousel-reactive-utils@8.0.0-rc19(embla-carousel@8.0.0-rc19):
-    resolution: {integrity: sha512-ed9NppY0OxTtrSIwTCYNcMLlQfSNcNy8Zsw8uIG0te3qrhvQ2ePPsbcElK2SRAV8VMU6G7JQweQIb6amzYMDXA==}
+  /embla-carousel-reactive-utils@8.0.2(embla-carousel@8.0.2):
+    resolution: {integrity: sha512-nLZqDkQdO0hvOP49/dUwjkkepMnUXgIzhyRuDjwGqswpB4Ibnc5M+w7rSQQAM+uMj0cPaXnYOTlv8XD7I/zVNw==}
     peerDependencies:
-      embla-carousel: 8.0.0-rc19
+      embla-carousel: 8.0.2
     dependencies:
-      embla-carousel: 8.0.0-rc19
+      embla-carousel: 8.0.2
     dev: true
 
-  /embla-carousel-svelte@8.0.0-rc19(svelte@4.2.12):
-    resolution: {integrity: sha512-gDNjcihzTNB/0Iy6klOa0g34x11sWD6sZ3n6835EV/GtHq4iu2P5c/o71KwZRsCTCoRnILpPuVSBUEiwzew1AA==}
+  /embla-carousel-svelte@8.0.2(svelte@4.2.12):
+    resolution: {integrity: sha512-pJ4mXcyqvd3sLVyeLTOjz9XuIuhlBe1mHLqJ7X7llpc55B4xs/HZT5qof6IfETCN5rtE+cQdsNEkxI6el7uJxQ==}
     peerDependencies:
       svelte: ^3.49.0 || ^4.0.0
     dependencies:
-      embla-carousel: 8.0.0-rc19
-      embla-carousel-reactive-utils: 8.0.0-rc19(embla-carousel@8.0.0-rc19)
+      embla-carousel: 8.0.2
+      embla-carousel-reactive-utils: 8.0.2(embla-carousel@8.0.2)
       svelte: 4.2.12
     dev: true
 
-  /embla-carousel@8.0.0-rc19:
-    resolution: {integrity: sha512-PAChVyYoVZo8subkBN8LjZ7+0vk4CmVvMnxH0Y2ux76VUEUBl1wk5xDo8+MUhH5MXU6ZrgkBpMe++bKob1Z+2g==}
+  /embla-carousel@8.0.2:
+    resolution: {integrity: sha512-bogsDO8xosuh/l3PxIvA5AMl3+BnRVAse9sDW/60amzj4MbGS5re4WH5eVEXiuH8G1/3G7QUAX2QNr3Yx8z5rA==}
     dev: true
 
   /emoji-regex@8.0.0:
