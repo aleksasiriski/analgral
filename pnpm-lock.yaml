@@ -49,7 +49,7 @@ devDependencies:
     version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
   formsnap:
     specifier: ^0.4.3
-    version: 0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.22.4)
+    version: 0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.25.76)
   mathjs:
     specifier: ^12.4.1
     version: 12.4.1
@@ -72,8 +72,8 @@ devDependencies:
     specifier: ^3.2.2
     version: 3.2.2(prettier@3.2.4)(svelte@4.2.12)
   prettier-plugin-tailwindcss:
-    specifier: ^0.5.9
-    version: 0.5.11(prettier-plugin-svelte@3.2.2)(prettier@3.2.4)
+    specifier: ^0.6.14
+    version: 0.6.14(prettier-plugin-svelte@3.2.2)(prettier@3.2.4)
   radix-icons-svelte:
     specifier: ^1.2.1
     version: 1.2.1
@@ -88,7 +88,7 @@ devDependencies:
     version: 0.2.2(svelte@4.2.12)
   sveltekit-superforms:
     specifier: ^1.13.4
-    version: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.22.4)
+    version: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.25.76)
   tailwind-merge:
     specifier: ^2.3.0
     version: 2.3.0
@@ -1638,7 +1638,7 @@ packages:
       signal-exit: 4.1.0
     dev: true
 
-  /formsnap@0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.22.4):
+  /formsnap@0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.25.76):
     resolution: {integrity: sha512-PWVq78XVUHhAU1tcVGKeGamk6B4Opkk1uVNRW2YofiQpnA5Bry1c3TQjB9cVDw5u4oAwmDvIoAzVHlrAIgc+tw==}
     peerDependencies:
       svelte: ^4.0.0
@@ -1646,8 +1646,8 @@ packages:
       zod: ^3.22.2
     dependencies:
       svelte: 4.2.12
-      sveltekit-superforms: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.22.4)
-      zod: 3.22.4
+      sveltekit-superforms: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.25.76)
+      zod: 3.25.76
     dev: true
 
   /fraction.js@4.3.4:
@@ -2439,33 +2439,43 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.11(prettier-plugin-svelte@3.2.2)(prettier@3.2.4):
-    resolution: {integrity: sha512-AvI/DNyMctyyxGOjyePgi/gqj5hJYClZ1avtQvLlqMT3uDZkRbi4HhGUpok3DRzv9z7Lti85Kdj3s3/1CeNI0w==}
+  /prettier-plugin-tailwindcss@0.6.14(prettier-plugin-svelte@3.2.2)(prettier@3.2.4):
+    resolution: {integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-hermes': '*'
+      '@prettier/plugin-oxc': '*'
       '@prettier/plugin-pug': '*'
       '@shopify/prettier-plugin-liquid': '*'
       '@trivago/prettier-plugin-sort-imports': '*'
+      '@zackad/prettier-plugin-twig': '*'
       prettier: ^3.0
       prettier-plugin-astro: '*'
       prettier-plugin-css-order: '*'
       prettier-plugin-import-sort: '*'
       prettier-plugin-jsdoc: '*'
       prettier-plugin-marko: '*'
+      prettier-plugin-multiline-arrays: '*'
       prettier-plugin-organize-attributes: '*'
       prettier-plugin-organize-imports: '*'
+      prettier-plugin-sort-imports: '*'
       prettier-plugin-style-order: '*'
       prettier-plugin-svelte: '*'
-      prettier-plugin-twig-melody: '*'
     peerDependenciesMeta:
       '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-hermes':
+        optional: true
+      '@prettier/plugin-oxc':
         optional: true
       '@prettier/plugin-pug':
         optional: true
       '@shopify/prettier-plugin-liquid':
         optional: true
       '@trivago/prettier-plugin-sort-imports':
+        optional: true
+      '@zackad/prettier-plugin-twig':
         optional: true
       prettier-plugin-astro:
         optional: true
@@ -2477,15 +2487,17 @@ packages:
         optional: true
       prettier-plugin-marko:
         optional: true
+      prettier-plugin-multiline-arrays:
+        optional: true
       prettier-plugin-organize-attributes:
         optional: true
       prettier-plugin-organize-imports:
         optional: true
+      prettier-plugin-sort-imports:
+        optional: true
       prettier-plugin-style-order:
         optional: true
       prettier-plugin-svelte:
-        optional: true
-      prettier-plugin-twig-melody:
         optional: true
     dependencies:
       prettier: 3.2.4
@@ -2917,7 +2929,7 @@ packages:
       periscopic: 3.1.0
     dev: true
 
-  /sveltekit-superforms@1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.22.4):
+  /sveltekit-superforms@1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.25.76):
     resolution: {integrity: sha512-rM2+Ictaw7OAIorCLmvg82orci/mtO9ZouI4emtx8SyYngx9aED+eNZlHPLufgB6D7geL2a+hMSFtM3zmMQixQ==}
     peerDependencies:
       '@sveltejs/kit': 1.x || 2.x
@@ -2928,7 +2940,7 @@ packages:
       devalue: 4.3.2
       klona: 2.0.6
       svelte: 4.2.12
-      zod: 3.22.4
+      zod: 3.25.76
     dev: true
 
   /tabbable@6.2.0:
@@ -3225,6 +3237,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.22.4:
-    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+  /zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
     dev: true
