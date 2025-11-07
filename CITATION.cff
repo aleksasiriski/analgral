@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Analgral"
+message: >-
+  If this is somehow helpful to you, you're able to cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Aleksa
+    family-names: Siriški
+    email: sir@tmina.org
+  - given-names: Matija
+    family-names: Kljajić
+    email: contact@matijakljajic.com
+    orcid: "https://orcid.org/0009-0007-9039-147X"
+repository-code: "https://github.com/aleksasiriski/analgral"
+keywords:
+  - "Numerical integration"
+  - "Riemann sum"
+  - "Svelte"
+license: "AGPL-3.0-or-later"
