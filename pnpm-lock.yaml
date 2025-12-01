@@ -18,8 +18,8 @@ devDependencies:
     specifier: 8.56.7
     version: 8.56.7
   '@types/node':
-    specifier: ^20.11.24
-    version: 20.11.24
+    specifier: ^24.6.1
+    version: 24.6.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.0.0
     version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.57.0)(typescript@5.4.5)
@@ -49,7 +49,7 @@ devDependencies:
     version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
   formsnap:
     specifier: ^0.4.3
-    version: 0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.22.4)
+    version: 0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.25.76)
   mathjs:
     specifier: ^12.4.1
     version: 12.4.1
@@ -88,7 +88,7 @@ devDependencies:
     version: 0.2.2(svelte@4.2.12)
   sveltekit-superforms:
     specifier: ^1.13.4
-    version: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.22.4)
+    version: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.25.76)
   tailwind-merge:
     specifier: ^2.3.0
     version: 2.3.0
@@ -109,7 +109,7 @@ devDependencies:
     version: 0.2.1(svelte@4.2.12)
   vite:
     specifier: ^5.1.4
-    version: 5.1.4(@types/node@20.11.24)
+    version: 5.1.4(@types/node@24.6.1)
 
 packages:
 
@@ -680,7 +680,7 @@ packages:
       sirv: 2.0.4
       svelte: 4.2.12
       tiny-glob: 0.2.9
-      vite: 5.1.4(@types/node@20.11.24)
+      vite: 5.1.4(@types/node@24.6.1)
     dev: true
 
   /@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.1.4):
@@ -694,7 +694,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.1.4)
       debug: 4.3.4
       svelte: 4.2.12
-      vite: 5.1.4(@types/node@20.11.24)
+      vite: 5.1.4(@types/node@24.6.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -713,7 +713,7 @@ packages:
       magic-string: 0.30.5
       svelte: 4.2.12
       svelte-hmr: 0.15.3(svelte@4.2.12)
-      vite: 5.1.4(@types/node@20.11.24)
+      vite: 5.1.4(@types/node@24.6.1)
       vitefu: 0.2.5(vite@5.1.4)
     transitivePeerDependencies:
       - supports-color
@@ -744,10 +744,10 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/node@20.11.24:
-    resolution: {integrity: sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==}
+  /@types/node@24.6.1:
+    resolution: {integrity: sha512-ljvjjs3DNXummeIaooB4cLBKg2U6SPI6Hjra/9rRIy7CpM0HpLtG9HptkMKAb4HYWy5S7HUvJEuWgr/y0U8SHw==}
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 7.13.0
     dev: true
 
   /@types/pug@2.0.10:
@@ -1638,7 +1638,7 @@ packages:
       signal-exit: 4.1.0
     dev: true
 
-  /formsnap@0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.22.4):
+  /formsnap@0.4.3(svelte@4.2.12)(sveltekit-superforms@1.13.4)(zod@3.25.76):
     resolution: {integrity: sha512-PWVq78XVUHhAU1tcVGKeGamk6B4Opkk1uVNRW2YofiQpnA5Bry1c3TQjB9cVDw5u4oAwmDvIoAzVHlrAIgc+tw==}
     peerDependencies:
       svelte: ^4.0.0
@@ -1646,8 +1646,8 @@ packages:
       zod: ^3.22.2
     dependencies:
       svelte: 4.2.12
-      sveltekit-superforms: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.22.4)
-      zod: 3.22.4
+      sveltekit-superforms: 1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.25.76)
+      zod: 3.25.76
     dev: true
 
   /fraction.js@4.3.4:
@@ -2917,7 +2917,7 @@ packages:
       periscopic: 3.1.0
     dev: true
 
-  /sveltekit-superforms@1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.22.4):
+  /sveltekit-superforms@1.13.4(@sveltejs/kit@2.5.0)(svelte@4.2.12)(zod@3.25.76):
     resolution: {integrity: sha512-rM2+Ictaw7OAIorCLmvg82orci/mtO9ZouI4emtx8SyYngx9aED+eNZlHPLufgB6D7geL2a+hMSFtM3zmMQixQ==}
     peerDependencies:
       '@sveltejs/kit': 1.x || 2.x
@@ -2928,7 +2928,7 @@ packages:
       devalue: 4.3.2
       klona: 2.0.6
       svelte: 4.2.12
-      zod: 3.22.4
+      zod: 3.25.76
     dev: true
 
   /tabbable@6.2.0:
@@ -3078,8 +3078,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  /undici-types@7.13.0:
+    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
     dev: true
 
   /update-browserslist-db@1.0.13(browserslist@4.22.2):
@@ -3112,7 +3112,7 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /vite@5.1.4(@types/node@20.11.24):
+  /vite@5.1.4(@types/node@24.6.1):
     resolution: {integrity: sha512-n+MPqzq+d9nMVTKyewqw6kSt+R3CkvF9QAKY8obiQn8g1fwTscKxyfaYnC632HtBXAQGc1Yjomphwn1dtwGAHg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -3140,7 +3140,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.11.24
+      '@types/node': 24.6.1
       esbuild: 0.19.11
       postcss: 8.4.35
       rollup: 4.9.5
@@ -3156,7 +3156,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.1.4(@types/node@20.11.24)
+      vite: 5.1.4(@types/node@24.6.1)
     dev: true
 
   /webidl-conversions@3.0.1:
@@ -3225,6 +3225,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.22.4:
-    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+  /zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
     dev: true
